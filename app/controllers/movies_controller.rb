@@ -49,7 +49,7 @@ class MoviesController < ApplicationController
       #params[:ratings] = @checked_ratings
       #params[:sort] = @sort
       flash.keep
-      redirect_to movies_path(:sort => @sort, :ratings => @checked_ratings)
+      #redirect_to movies_path(:sort => @sort, :ratings => @checked_ratings)
     end
   end
 
