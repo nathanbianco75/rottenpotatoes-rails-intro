@@ -5,8 +5,13 @@ module MoviesHelper
   end
   
   def set_hilite(field)
-    sort = params[:sort]
-    if sort.to_s == field
+    if not params[:sort].nil?
+      @sort = params[:sort]
+    else
+      @sort = session[:sort]
+    end
+    
+    if @sort.to_s == field
       return 'hilite'
     else
       return nil
