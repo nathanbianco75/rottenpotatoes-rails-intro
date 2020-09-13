@@ -14,9 +14,11 @@ class MoviesController < ApplicationController
     use_session = false
     if not params[:sort].nil?
       @sort = params[:sort]
-    else
+    elsif not session[:sort].nil?
       use_session = true;
       @sort = session[:sort]
+    else
+      @sort = nil
     end
     
     @all_ratings = Movie.get_ratings
